@@ -13,39 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-/*
-
-1vw = 1% of viewport width
-
-1vh = 1% of viewport height
-
-1vmin = 1vw or 1vh, whichever is smaller
-
-1vmax = 1vw or 1vh, whichever is larger
-
-*/
-
-body {
-  font-family: "Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,AppleGothic,sans-serif;
-  font-size: 3vmin;
-}
-
-.navigation {
-  padding: 10px 20px;
-}
-
-.navigation span {
-  color: white;
-  font-size: 4vmin;
-}
-
-.btn-large {
-  font-size: 20px;
-  max-width: 100%;
-  margin: 10px 0;
-}
-
-.icon {
-  padding-right: 10px;
-}

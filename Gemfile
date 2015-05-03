@@ -25,5 +25,6 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'faker'
+  gem 'railroady'
 end
 

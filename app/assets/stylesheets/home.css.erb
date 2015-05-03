@@ -21,7 +21,7 @@ header{
 header a{
   color:white;
   display:inline-block;
-  padding:0px 30px;
+  padding:0px 10px;
   height:60px;
   line-height:60px;
   text-align:center;
@@ -37,14 +37,14 @@ header a{
   /*padding-right: 100px;*/
 }
 
-#hero1{
-  background:url(/victim.png);
+#donate{
+  background:url('<%= asset_path("victim.png") %>');
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;
 }
-#hero2{
-  background: url(http://www.imedicalapps.com/wp-content/uploads/2014/09/blood-donation.jpg);
+#hospital{
+  background: url('<%= asset_path("helping_hand.jpg") %> ');
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;
@@ -98,4 +98,16 @@ p{
   background-color:#e74c3c;
   color: white;
   text-transform: uppercase;
+}
+
+.white-btn {
+  text-decoration: none;
+  padding: 15px 50px;
+  background-color:#ecf0f1;
+  color: black;
+  text-transform: uppercase;
+}
+
+.text-white {
+  color: white !important;
 }

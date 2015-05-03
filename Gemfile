@@ -16,6 +16,11 @@ gem 'delayed_job_web'
 gem 'daemons'
 gem 'enumerize'
 gem 'geocoder'
+gem 'simple_form'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'annotate'

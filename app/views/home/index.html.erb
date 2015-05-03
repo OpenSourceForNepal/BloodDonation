@@ -1,11 +1,13 @@
 <header>
-  <a href="#" id="logo">Blood Donation</a>
-  <a href="#">Donate</a>
-  <a href="#">Patient</a>
-  <a href="#">Hospital</a>
+  <a href="#" id="logo">Blood Donation</a><br>
+  <center>
+  <a data-scroll href="#donate"><u>Donate</u></a>
+  <a data-scroll href="#patient"><u>Patient</u></a>
+  <a data-scroll href="#hospital"><u>Hospital</u></a>
+  </center>
 </header>
 
-<section id="hero1" class="hero">
+<section id="donate" class="hero">
   <div class="inner">
     <div class="copy">
     <h1>Your blood could safe someone's life.</h1>
@@ -16,7 +18,7 @@
   </div>
 </section>
 
-<section class="content">
+<section class="content" id="patient" style="background-color: #BDC3C7;">
   <div class="inner">
     <div class="copy">
     <h1>Your friend / family need blood ?</h1>
@@ -27,7 +29,7 @@
   </div>
 </section>
 
-<section id="hero2" class="hero">
+<section id="hospital" class="hero">
   <div class="inner">
     <div class="copy">
     <h1>Hospitals ?</h1>
@@ -38,11 +40,13 @@
   </div>
 </section>
 
-<section class="content">
+<section class="content" style="background-color: black;">
   <div class="inner">
     <div class="copy">
-    <h1>Open Source for Nepal</h1>
-      <p>Github</p>
+      <%= asset_path("logo.png") %>
+    <center><a href="http://opensourcefornepal.github.io/" target="_blank"><%= image_tag("logo.png", size: "50x50") %></a></center>
+    <h1 class="text-white">Open Source for Nepal</h1>
+      <a href="http://github.com/OpenSourceForNepal" target="_blank"><p class="text-white">Github</p></a>
     </div>
   </div>
 </section>

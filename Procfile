@@ -1,1 +1,1 @@
-web: script/delayed_job start
+worker: rake jobs:work

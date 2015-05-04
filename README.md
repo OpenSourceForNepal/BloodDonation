@@ -1,17 +1,17 @@
 # Blood Donation
 
-This is one of few **OpenSource** Project to help victoms of **Earthquake Nepal 2015** we all are trying to build in collaboration with different Doctors and Hospitals in Nepal and all over the world. Please open issues, contribute and open pull request. Your small effort could save millions of lives.
+This is one of a few **Open Source** projects to help victims of **Earthquake Nepal 2015**. We are trying to build these projects in collaboration with different Doctors and Hospitals in Nepal and all over the world. Please open issues, contribute and open pull requests. Your small effort could save millions of lives.
 
 What is this all about?
 ---
-As you may already know Nepal is going through a lot right now. More than 6500+ death troll, countless people homeless, billions of dollars in property destruction. We all have been Donating and supporting however way we can. 
+As you may already know Nepal is going through a lot right now. More than 6500+ death toll, countless people homeless, billions of dollars in property destruction. We all have been donating and supporting however we can. 
 
-Now, We are inviting all Developers, Designers and Concerned Individuals to help Rebuild Nepal with OpenSource Projects / Softwares. Please [SIGN UP](http://opensourcefornepal.github.io), we have created a slack channel where we will communicate and collaborate on different ideas and ways we can help.
+Now, we are inviting all Developers, Designers and Concerned Individuals to help Rebuild Nepal with Open Source Projects and Software. Please [SIGN UP](http://opensourcefornepal.github.io) and join our slack channel where we will communicate and collaborate on different ideas and ways we can help.
 
-This project is mainly focusing in blood donation. Inviting and encouraging people in Nepal to Donate blood.
+This project is mainly focusing on increasing blood donation, inviting and encouraging people in Nepal to donate blood.
 
 How can you help ?
 ---
-* Join [OpenSourceForNepal](http://opensourcefornepal.github.io) on slack
-* We have a list of [Tasks / Issues](https://github.com/OpenSourceForNepal/BloodDonation/issues) that needs to be done.
-* Fork and send pull request.
+* Join [OpenSourceForNepal](http://opensourcefornepal.github.io) on slack.
+* We have a list of [Tasks / Issues](https://github.com/OpenSourceForNepal/BloodDonation/issues) that need to be done.
+* Fork and send a pull request.

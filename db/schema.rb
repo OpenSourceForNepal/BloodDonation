@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150503081226) do
   enable_extension "plpgsql"
 
   create_table "blood_types", force: :cascade do |t|
-    t.string   "type_enum"
+    t.string   "blood_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150503081226) do
     t.float    "lat"
     t.float    "long"
     t.integer  "commute_radius", default: 5
+    t.string   "blood_type"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

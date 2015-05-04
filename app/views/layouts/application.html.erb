@@ -6,6 +6,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Blood Donation Service for Nepal" %></title>
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -13,9 +14,14 @@
   </head>
 
   <body>
+    <div class="col-md-12" style="background-color: black; padding: 100px 0">
+      <center>
+        <h1 class="text-white">Donate Blood, Save Lives!</h1>
+      </center>
+    </div>
+    <%= render 'partials/flash' %>
 
     <%= yield %>
-
   </body>
 </html>
 

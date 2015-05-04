@@ -13,6 +13,7 @@ class CreateDonors < ActiveRecord::Migration
       t.float  :lat
       t.float  :long
       t.integer :commute_radius, default: 5
+      t.string :blood_type
 
       t.timestamps null: false
     end

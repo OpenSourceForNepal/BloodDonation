@@ -1,86 +1,64 @@
-<div class="col-md-12" style="background-color: black; padding: 100px 0">
-  <center>
-    <h1 class="text-white">Donate Blood, Save Lives!</h1>
-  </center>
-</div>
-
 <div class="col-md-8 col-md-offset-2">
   <div class="panel panel-default">
     <div class="panel-body">
       <!-- Form -->
       <%= simple_form_for(@donor, url: donate_index_path, html: { class: 'form-horizontal' }) do |f| %>
         <fieldset>
-          <small>We will notify you as soon as someone around your vicinity needs your blood type.</small>
           <br>
           <legend>Please fill out the form below.</legend>
-          <div class="form-group">
-            <label for="first_name" class="col-lg-2 control-label">Name</label>
-            <div class="col-lg-5">
-              <input type="text" class="form-control" placeholder="First Name">
-            </div>
-            <div class="col-lg-5">
-              <input type="text" class="form-control" placeholder="Last Name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Checkbox
-                </label>
+          <div class="col-md-10 col-md-offset-1">
+            <div class="form-group">
+              <div class="col-lg-6">
+                <%= f.input :first_name, label: 'First Name', hint: 'Required' %>
+              </div>
+              <div class="col-lg-6">
+                <%= f.input :last_name, label: 'Last Name' %>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-            <div class="col-lg-10">
-              <textarea class="form-control" rows="3" id="textArea"></textarea>
-              <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-2 control-label">Radios</label>
-            <div class="col-lg-10">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                  Option one is this
-                </label>
+
+            <div class="form-group">
+              <div class="col-lg-6">
+                <%= f.input :cell_phone, label: 'Cell Phone', hint: 'Required', placeholder: '+977 9811111111' %>
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                  Option two can be something else
-                </label>
+              <div class="col-lg-6">
+                <%= f.input :email, label: 'Email' %>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Selects</label>
-            <div class="col-lg-10">
-              <select class="form-control" id="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-              <br>
-              <select multiple="" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+
+            <div class="form-group">
+              <div class="col-lg-6">
+                <%= f.input :street, label: 'Address', placeholder: 'Street / Galli / House #' %>
+              </div>
+              <div class="col-lg-6">
+                <%= f.input :city, label: 'City', hint: 'Required' %>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-              <button type="reset" class="btn btn-default">Cancel</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div class="form-group">
+              <div class="col-lg-6">
+                <%= f.input :state, label: 'Aanchal', hint: 'Required' %>
+              </div>
+              <div class="col-lg-6">
+                <%= f.input :postal_code, label: 'Postal Code' %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="control-label" for="commute_radius">Radius (KM)</label><br>
+                <input class="form-control" type="text" name="donor[commute_radius]" id="commute_radius">
+                <p class="help-block">How long can you commute to hospital ?</p>
+              </div>
+              <div class="col-lg-6">
+                <%= f.input :blood_type %>
+                <p class="help-block">What is your blood type (required)</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-12">
+                <%= f.submit 'Submit', class: 'btn btn-default btn-lg btn-block' %>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -90,5 +68,10 @@
   </div>
 </div>
 
-
-<!-- first_name: nil, last_name: nil, cell_phone: nil, email: nil, street: nil, city: nil, state: nil, postal_code: nil, country: "Nepal", lat: nil, long: nil, commute_radius: 5, -->
+<script type="text/javascript">
+  var slider = new Slider("#commute_radius", {
+    ticks: [0, 5, 10, 15, 20, 25],
+    ticks_labels: ['0', '5', '10', '15', '20','25'],
+    ticks_snap_bounds: 30
+  });
+</script>

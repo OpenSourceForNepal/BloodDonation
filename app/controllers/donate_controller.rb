@@ -4,11 +4,25 @@ class DonateController < ApplicationController
   end
 
   def create
-    require "pry"; binding.pry
-    render 'show'
+    @donor = Donor.where(cell_phone: donor_params[:cell_phone]).first_or_initialize(donor_params)
+
+    if @donor.id.present?
+      flash[:success] = 'We already have you on Donor List, if you have not please go ahead and donate your blood to following people /hospitals.'
+      redirect_to donate_path(@donor)
+    elsif @donor.save
+      flash[:success] = "Thanks for being a Donor, please go ahead and donate blood to following people / hospital."
+      redirect_to donate_path(@donor)
+    else
+      render :new
+    end
   end
 
   def show
+    @donor = Donor.find(params[:id])
+  end
 
+  private
+  def donor_params
+    params.require(:donor).permit(:first_name, :last_name, :cell_phone, :email, :street, :city, :state, :postal_code, :commute_radius, :blood_type)
   end
 end

@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require vendor/smooth-scroll.js
 //= require vendor/share.min.js

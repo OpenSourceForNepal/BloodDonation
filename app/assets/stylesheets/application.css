@@ -74,3 +74,9 @@ html, body, #map-canvas {
   border-color: none;
   color: #ffffff;
 }
+
+.blood-header {
+  background-color: #8A0707;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}

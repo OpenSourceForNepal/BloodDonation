@@ -16,6 +16,7 @@ gem 'delayed_job_web'
 gem 'daemons'
 gem 'enumerize'
 gem 'geocoder'
+gem 'jquery-turbolinks'
 gem 'simple_form'
 
 group :production do

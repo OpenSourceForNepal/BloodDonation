@@ -1,11 +1,11 @@
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require namespace
 //= require_tree ./blood
 //= require vendor/slider.js
 
-$(document).ready(function() {
+window.onload = (function() {
   var views = new BloodForNepal.Views()
   var controller = new BloodForNepal.Controller(views)
 

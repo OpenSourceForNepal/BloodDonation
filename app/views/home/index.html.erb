@@ -1,5 +1,5 @@
 <header>
-  <a href="#" id="logo">Blood Donation</a><br>
+  <a href="/" id="logo">Blood f<img class="middle" src="/blood.png">r Nepal</a>
   <center>
   <a data-scroll href="#donate"><u>Donate</u></a>
   <a data-scroll href="#patient"><u>Patient</u></a>
@@ -10,11 +10,10 @@
 <section id="donate" class="hero">
   <div class="inner">
     <div class="copy">
-    <h1>Your blood could safe someone's life.</h1>
-    <p>Please fill out the blood donation form below.</p>
-    <br>
-    <!-- <a href="" class="red-btn">Donate Blood</a> -->
-    <%= link_to 'Donate Blood', new_donate_path, class: 'red-btn' %>
+      <h1>Your blood could save someone's life.</h1>
+      <p>Please fill out the blood donation form below.</p>
+      <br>
+      <%= link_to 'Donate Blood', new_donate_path, class: 'red-btn' %>
     </div>
   </div>
 </section>
@@ -46,7 +45,9 @@
     <div class="copy">
     <center><a href="http://opensourcefornepal.github.io/" target="_blank"><%= image_tag("logo.png", size: "50x50") %></a></center>
     <h1 class="text-white">Open Source for Nepal</h1>
-      <a href="http://github.com/OpenSourceForNepal" target="_blank"><p class="text-white">Github</p></a>
+      <!-- <a href="http://github.com/OpenSourceForNepal" target="_blank"><p class="text-white">Github</p></a> -->
+    <p><%= render 'partials/social_share' %></p>
+
     </div>
   </div>
 </section>

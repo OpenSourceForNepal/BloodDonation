@@ -23,6 +23,6 @@ class DonateController < ApplicationController
 
   private
   def donor_params
-    params.require(:donor).permit(:first_name, :last_name, :cell_phone, :email, :street, :city, :state, :postal_code, :commute_radius, :blood_type)
+    params.require(:donor).permit(:full_name, :cell_phone, :email, :address, :commute_radius, :blood_type, :lat, :long)
   end
 end

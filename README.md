@@ -1,4 +1,4 @@
-![Open Source For Nepal](https://raw.githubusercontent.com/OpenSourceForNepal/BloodDonation/master/app/assets/images/tagline.png)
+![Open Source For Nepal](https://raw.githubusercontent.com/OpenSourceForNepal/BloodDonation/master/app/assets/images/tagline_image.png)
 # Blood Donation
 
 This is one of a few **Open Source** projects to help victims of **Earthquake Nepal 2015**. We are trying to build these projects in collaboration with different Doctors and Hospitals in Nepal and all over the world. Please open issues, contribute and open pull requests. Your small effort could save millions of lives.

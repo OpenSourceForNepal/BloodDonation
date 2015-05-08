@@ -50,21 +50,16 @@ ActiveRecord::Schema.define(version: 20150503081226) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "donors", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "full_name"
     t.string   "cell_phone"
     t.string   "email"
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.string   "postal_code"
-    t.string   "country",        default: "Nepal"
+    t.string   "address"
     t.float    "lat"
     t.float    "long"
     t.integer  "commute_radius", default: 5
     t.string   "blood_type"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "hospitals", force: :cascade do |t|

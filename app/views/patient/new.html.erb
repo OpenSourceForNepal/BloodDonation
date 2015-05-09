@@ -1,0 +1,58 @@
+<!-- Header -->
+<div class="row">
+  <div class="blood-header">
+    <div class="container">
+      <center>
+        <h1 class="text-white">Need Blood?</h1>
+        <p class="text-white">Please complete the form below, we will notify when potential donors with your blood type will be available.</p>
+      </center>
+    </div>
+  </div>
+</div>
+
+<%= render 'partials/flash' %>
+<!-- Form -->
+<div class="col-sm-5" style="height: 100%;">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= simple_form_for(@patient, url: patient_index_path, html: { class: 'form-horizontal' }) do |f| %>
+          <center><legend>All fields are important.</legend></center>
+          <div class="col-md-10 col-md-offset-1">
+            <%= f.input :address, label: 'Address', placeholder: 'Where do you live?', hint: 'Required' %>
+            <%= f.input :full_name, label: 'Full Name', hint: 'Required' %>
+            <input type="hidden" id="latitude" name="patient[lat]" value="">
+            <input type="hidden" id="longitude" name="patient[long]" value="">
+
+            <div class="form-group">
+              <div class="col-lg-6">
+                <%= f.input :cell_phone, label: 'Cell Phone', hint: 'Required', placeholder: '+977 9811111111' %>
+              </div>
+              <div class="col-lg-6">
+                <%= f.input :email, label: 'Email' %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-8">
+                <label class="control-label" for="commute_radius">Radius (KM)</label><br>
+                <input class="form-control" type="text" name="patient[commute_radius]" id="commute_radius">
+                <p class="help-block">How long can you commute to hospital ?</p>
+              </div>
+              <div class="col-lg-4">
+                <%= f.input :blood_type %>
+                <p class="help-block">Required</p>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <%= f.submit 'Submit', class: 'btn btn-default btn-lg btn-block' %>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<!-- Map -->
+<div class="row col-md-7" id="map-canvas"></div>

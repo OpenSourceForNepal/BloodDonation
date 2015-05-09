@@ -19,15 +19,15 @@
 #
 
 class Hospital < ActiveRecord::Base
-  geocoded_by :address, :latitude  => :lat, :longitude => :long
-  before_validation :normalize_data
+  geocoded_by :city, :latitude  => :lat, :longitude => :long
+  before_validation :normalize_data, :nepal_phone
   after_validation :geocode
   has_and_belongs_to_many :blood_types
 
-  validates :name, presence: { :message => 'Name of the Hospital cannot be blank!' }
+  validates :name, presence: { :message => 'Name of the Hospital cannot be blank' }
   validates :city, presence: { :message => 'We need city to locate this hospital.' }
   validates :state, presence: { :message => 'We need Aanchal so we can find the correct location.' }
-  validates :foo, length: {is: 10, message: 'Phone number you entered in invalid!'}, allow_blank: false
+  validates :contact_person_phone, presence: { :message => 'Contact person\'s phone number cannot be blank.' }
 
 
   def address
@@ -41,6 +41,28 @@ class Hospital < ActiveRecord::Base
     self.state.squish.try(:capitalize!)
     self.contact_person_name.squish.try(:capitalize!) if self.contact_person_name.present?
     self.contact_person_email.squish.try(:downcase!) if self.contact_person_email.present?
-    self.cell_phone.gsub!(/\s|\.|\-|\(|\)/, '').insert(0, '+977') if self.cell_phone.present?
+  end
+
+  def geo_code
+    geocode if (self.lat.nil? || self.long.nil?)
+  end
+
+  # Taking both landline and cell into consideration
+  # TODO: Solve this with regex checks
+  def nepal_phone
+    phone = self.contact_person_phone.gsub(/\s|\.|\-|\(|\)/, '')
+    phone = if (phone.start_with?('+977') && phone.length == 14) || (phone.start_with?('+9771') && phone.length == 11)
+                phone
+              elsif (phone.start_with?('977') && phone.length == 13) || (phone.start_with?('9771') && phone.length == 10)
+                phone.insert(0, '+')
+              elsif phone.blank?
+                phone
+              elsif phone.length == 7
+                phone.insert(0, '+9771')
+              else
+                phone.insert(0, '+977')
+              end
+
+    self.contact_person_phone = phone
   end
 end

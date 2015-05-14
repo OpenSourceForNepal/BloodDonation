@@ -1,0 +1,13 @@
+<% @donors.each do |donor| %>
+  <div class="donor">
+    <h1><%= donor.full_name %></h1>
+    <p><strong> Blood Type:</strong> <%= donor.blood_type.titleize %></p>
+    <p><strong>Radius(KM):</strong> <%= donor.commute_radius %></p>
+    <p><strong>Address:</strong> <%= donor.address %></p>
+    <p><strong>Email:</strong> <%= donor.email %></p>
+    <p><strong> Cell Phone:</strong> <%= donor.cell_phone %></p>
+  </div>
+<% end %>
+<div class="search-paginate">
+  <%= will_paginate @donors, class: "pagination" %>
+</div>

@@ -19,6 +19,7 @@ gem 'geocoder'
 gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'meta-tags'
+gem 'will_paginate', '~> 3.0.5'
 
 group :production do
   gem 'rails_12factor'
@@ -34,4 +35,3 @@ group :development, :test do
   gem 'faker'
   gem 'railroady'
 end
-

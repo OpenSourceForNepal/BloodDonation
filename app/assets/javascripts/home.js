@@ -15,3 +15,15 @@
 //= require jquery_ujs
 //= require vendor/smooth-scroll.js
 //= require vendor/share.min.js
+
+$(function() {
+  $("#donors .pagination a").bind("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+
+  $("#donor_search").keyup(function() {
+    $.get($("#donor_search").attr("action"), $("#donor_search").serialize(), null, "script");
+    return false;
+  });
+});

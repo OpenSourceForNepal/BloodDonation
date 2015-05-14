@@ -57,4 +57,13 @@ class Donor < ActiveRecord::Base
   def convert_km_to_mile
     self.commute_radius = self.commute_radius.to_f * 0.621371
   end
+
+  def self.search(search)
+    if search
+      self.where(blood_type: search)
+    else
+      self.all
+    end
+  end
+
 end
